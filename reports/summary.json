@@ -1,0 +1,19 @@
+{
+  "customers": 7043,
+  "churned": 1869,
+  "blank_total_charges": 11,
+  "contracts": {
+    "Month-to-month": {
+      "customers": 3875,
+      "churn_rate": 0.4270967741935484
+    },
+    "One year": {
+      "customers": 1473,
+      "churn_rate": 0.11269517990495587
+    },
+    "Two year": {
+      "customers": 1695,
+      "churn_rate": 0.02831858407079646
+    }
+  }
+}

@@ -65,3 +65,14 @@ Most churn analysis projects stop at "here's the churn rate by segment." This pr
 
 **Saptarshi Mandal** — B.Tech Computer Science (Data Analytics focus), Institute of Engineering and Management, Kolkata
 [LinkedIn](https://www.linkedin.com/in/saptarshi-mandal-cs) · [GitHub](https://github.com/Saptarshi-Mandal-1234)
+
+## Reproduce a checked sample output
+
+Run `python scripts/summarize.py` from any directory with Python 3. It uses only the standard library and the included `data/telco-churn.csv`. It checks unique customer IDs and regenerates `reports/summary.json`.
+
+The supplied dataset contains 7,043 customers, 1,869 churned and 11 blank TotalCharges entries. `reports/churn-contracts.svg` visualizes the checked contract rates. This is a data chart, not a Power BI screenshot.
+
+For the full MySQL workflow, execute SQL scripts in numerical order in a dedicated `churn_analysis` database; scripts recreate project tables. Import the CSV after script 01 using the documented Workbench wizard. The provided `dashboard/churn.pbix` may require reconnecting to your local MySQL source; see `docs/dashboard-build-guide.md`. The Python summary has been run; MySQL execution and Power BI refresh have not been validated here.
+
+### Interpretation limits
+The 0–7 score is a heuristic, not a calibrated churn probability. In-sample flag associations are not out-of-sample predictive validation. Overlapping segments must not be summed into guaranteed savings. Blank TotalCharges substitution in the original SQL is an assumption that should be revisited before financial reporting.
